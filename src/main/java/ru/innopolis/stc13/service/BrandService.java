@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface BrandService {
     List<Brand> getBrandList();
+    int insert(String name, String country);
 }
