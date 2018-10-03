@@ -25,6 +25,5 @@ public class BrandServiceImpl implements BrandService {
             return brandDao.insert(brand);
         }
         return 0;
-
     }
 }

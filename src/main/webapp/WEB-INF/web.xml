@@ -49,8 +49,6 @@
         <servlet-name>mobiles</servlet-name>
         <url-pattern>/phones</url-pattern>
     </servlet-mapping>
-
-
     <servlet>
         <servlet-name>createManufacturer</servlet-name>
         <servlet-class>ru.innopolis.stc13.controller.BrandServlet</servlet-class>

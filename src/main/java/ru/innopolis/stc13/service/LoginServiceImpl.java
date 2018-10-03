@@ -15,8 +15,9 @@ public class LoginServiceImpl implements LoginService {
         if (login != null) {
             try {
                 user = userDao.getUserByLogin(login);
-                if (user == null)
+                if (user == null){
                     return -1;
+                }
                 return user.getRole();
             } catch (SQLException e) {
                 e.printStackTrace();
