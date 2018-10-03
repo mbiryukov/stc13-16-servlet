@@ -1,6 +1,5 @@
 package ru.innopolis.stc13.controller;
 
-import ru.innopolis.stc13.pojo.Brand;
 import ru.innopolis.stc13.service.LoginService;
 import ru.innopolis.stc13.service.LoginServiceImpl;
 
@@ -9,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 public class LoginServlet extends HttpServlet {
     LoginService loginService;
@@ -22,7 +20,14 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/login.jsp").forward(req, resp);
+        if ("logout".equals(req.getParameter("action"))) {
+            req.getSession().invalidate();
+        }
+        if (req.getSession().getAttribute("login") != null) {
+            resp.sendRedirect("/inner/dashBoard");
+        } else {
+            req.getRequestDispatcher("/login.jsp").forward(req, resp);
+        }
     }
 
     @Override

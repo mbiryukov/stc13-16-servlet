@@ -1,6 +1,6 @@
 </main><!-- .content -->
 </div><!-- .container-->
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <aside class="left-sidebar">
     <strong>Menu</strong>
     <ul>
