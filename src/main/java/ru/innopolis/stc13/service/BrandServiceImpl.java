@@ -17,4 +17,13 @@ public class BrandServiceImpl implements BrandService {
     public List<Brand> getBrandList() {
         return brandDao.getBrandList();
     }
+
+    @Override
+    public int insert(String name, String country){
+        if (name != null && country != null) {
+            Brand brand = new Brand(name, country);
+            return brandDao.insert(brand);
+        }
+        return 0;
+    }
 }

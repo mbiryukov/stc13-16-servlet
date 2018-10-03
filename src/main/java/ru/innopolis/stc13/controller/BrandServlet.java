@@ -24,4 +24,13 @@ public class BrandServlet extends HttpServlet {
         req.setAttribute("brands", res);
         req.getRequestDispatcher("/brands.jsp").forward(req, resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String name = req.getParameter("name");
+        String country = req.getParameter("country");
+        brandService.insert(name, country);
+        this.doGet(req, resp);
+    }
 }

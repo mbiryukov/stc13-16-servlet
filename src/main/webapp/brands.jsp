@@ -21,5 +21,6 @@
 <%
     }
 %>
+<a href="/createManufacturer">Create Brand</a>
 </body>
 </html>

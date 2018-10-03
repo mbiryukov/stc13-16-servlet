@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface BrandDao {
     List<Brand> getBrandList();
+    int insert(Brand brand);
 }
