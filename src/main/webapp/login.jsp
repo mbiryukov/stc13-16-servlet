@@ -1,10 +1,15 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="header.jsp"%>
 <%
-    if ("wrongLogin".equals(request.getParameter("errorCode"))) {
-        %>
-        <p style="color: #FF2222"> Error: wrongLogin.</p>
-<%
-    }
+    switch ("" + request.getParameter("errorCode")) {
+        case "wrongLogin":
+%>
+<p style="color: #FF2222"> Error: wrongLogin.</p>
+<% break;
+    case "accessDenied":%>
+<p style="color: #FF2222"> Error: accessDenied.</p>
+<% break;
+}
 %>
 <form action="/login" method="post" title="Создать пользователя">
     <input type="login" name="login" title="Логин"/>

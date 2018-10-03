@@ -76,4 +76,14 @@
         <servlet-name>dashBoard</servlet-name>
         <url-pattern>/inner/dashBoard</url-pattern>
     </servlet-mapping>
+
+    <filter>
+        <filter-name>InnerFilter</filter-name>
+        <filter-class>ru.innopolis.stc13.controller.filters.InnerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>InnerFilter</filter-name>
+        <url-pattern>/inner/*</url-pattern>
+    </filter-mapping>
+
 </web-app>

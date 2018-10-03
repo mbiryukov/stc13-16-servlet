@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,7 +7,7 @@
     <title></title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-    <link href="resources/style.css" rel="stylesheet">
+    <link href="/resources/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +16,13 @@
 
     <header class="header">
         <strong>Header:</strong>
-
+        <div>
+            <% if (request.getSession().getAttribute("login") != null) {%>
+            Вы вошли как: <%=request.getSession().getAttribute("login")%>
+            &nbsp;<a href="/login?action=logout">Выйти</a>
+            <%
+                } %>
+        </div>
     </header><!-- .header-->
 
     <div class="middle">
